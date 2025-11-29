@@ -8,6 +8,11 @@ export default defineConfig({
     // proxy: {
     //   '/api': 'http://localhost:3031', // Target your Express server's port
     // },
-    port: process.env.PORT
+    port: process.env.PORT,
+  },
+
+  define: {
+    '__APP_VERSION__': JSON.stringify('1.0.0'),
+    'process.env.PORT': JSON.stringify(process.env.PORT || 5173), // Example for Node.js specific variable
   },
 });

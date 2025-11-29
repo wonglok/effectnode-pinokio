@@ -1062,7 +1062,7 @@ levn@^0.4.1:
     prelude-ls "^1.2.1"
     type-check "~0.4.0"
 
-lib0@^0.2.102, lib0@^0.2.85, lib0@^0.2.99:
+lib0@^0.2.102, lib0@^0.2.85, lib0@^0.2.94, lib0@^0.2.99:
   version "0.2.114"
   resolved "https://registry.npmjs.org/lib0/-/lib0-0.2.114.tgz"
   integrity sha512-gcxmNFzA4hv8UYi8j43uPlQ7CGcyMJ2KQb5kZASw6SnAKAf10hK12i2fjrS3Cl/ugZa5Ui6WwIu1/6MIXiHttQ==
@@ -1199,7 +1199,14 @@ react-refresh@^0.18.0:
   resolved "https://registry.npmjs.org/react-refresh/-/react-refresh-0.18.0.tgz"
   integrity sha512-QgT5//D3jfjJb6Gsjxv0Slpj23ip+HtOpnNgnb2S5zU3CB26G/IDPGoy4RJB42wzFE46DRsstbW6tKHoKbhAxw==
 
-react@^19.2.0:
+react-yjs@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.npmjs.org/react-yjs/-/react-yjs-2.0.1.tgz"
+  integrity sha512-x9XiGHnsuFZWHkw2upjmbjMQOirwvnrcbTsWt3rhPhh0Mb8MjtAP0eveyjS6s0EB0vVSs6BHItw1d6eVLH04Vg==
+  dependencies:
+    lib0 "^0.2.94"
+
+"react@^18 || ^19", react@^19.2.0:
   version "19.2.0"
   resolved "https://registry.npmjs.org/react/-/react-19.2.0.tgz"
   integrity sha512-tmbWg6W31tQLeB5cdIBOicJDJRR2KzXsV7uSK9iNfLWQ5bIZfxuPEHp7M8wiHyHnn0DD1i7w3Zmin0FtkrwoCQ==
@@ -1355,7 +1362,7 @@ yallist@^3.0.2:
   resolved "https://registry.npmjs.org/yallist/-/yallist-3.1.1.tgz"
   integrity sha512-a4UGQaWPH59mOXUYnAG2ewncQS4i4F43Tv3JoAM+s2VDAmS9NsK8GpDMLrCHPksFT7h3K6TOoUNn2pb7RoXx4g==
 
-yjs@^13.0.0, yjs@^13.5.6, yjs@^13.6.27:
+yjs@^13.0.0, yjs@^13.5.6, yjs@^13.6.16, yjs@^13.6.27:
   version "13.6.27"
   resolved "https://registry.npmjs.org/yjs/-/yjs-13.6.27.tgz"
   integrity sha512-OIDwaflOaq4wC6YlPBy2L6ceKeKuF7DeTxx+jPzv1FHn9tCZ0ZwSRnUBxD05E3yed46fv/FWJbvR+Ud7x0L7zw==

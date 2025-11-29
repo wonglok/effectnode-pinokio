@@ -2,20 +2,23 @@
 import React, { useEffect, useState } from 'react';
 import * as Y from 'yjs'
 import { WebsocketProvider } from 'y-websocket'
+import { useY } from 'react-yjs';
 
 const doc = new Y.Doc()
-const wsProvider = new WebsocketProvider('ws://localhost:1234', 'my-roomname', doc)
+const wsProvider = new WebsocketProvider('ws://localhost:2329', 'my-roomname', doc)
 
 wsProvider.on('status', event => {
   console.log(event.status) // logs "connected" or "disconnected"
 })
 
+const yNames = doc.getArray('names');
 
 function App() {
+  const names = useY(yNames)
   const [message, setMessage] = useState('');
 
   useEffect(() => {
-    let base = `http://localhost:3031`
+    let base = `http://localhost:${Number(Number(process.env.PORT) + 1)}`
     fetch(`${base}/api/message`, {
       mode: 'cors'
     })

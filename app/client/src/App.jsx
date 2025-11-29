@@ -30,6 +30,7 @@ function App() {
   return (
     <div>
       <h1>Vite React with Express</h1>
+
       <button onClick={() => {
         const newTodo = 'new todo name waha ' + todos.length
         // add a Todo
@@ -39,6 +40,7 @@ function App() {
         todo.set("text", newTodo);
         yTodos.push([todo]);
       }}>Add one</button>
+
       {todos.map((r, i) => {
         return <div key={i + `${r.id || ''}`}>{r.text}
           <button onClick={() => {

@@ -13,7 +13,7 @@
         "message": "npm run start",
         "on": [
           {
-            "event": "/http://[^\\s\\n\\r]+/",
+            "event": "/http://localhost:[^\\s\\n\\r]+/",
             "done": true
           }
         ]
@@ -23,8 +23,7 @@
       "when": "{{input && input.event && Array.isArray(input.event) && input.event.length > 0}}",
       "method": "local.set",
       "params": {
-        "url2": "{{input.event[0]}}",
-        "url": "http://localhost:{{port}}"
+        "url": "{{input.event[0].replace(\"[2]\", \"\")}}"
       }
     }
   ]

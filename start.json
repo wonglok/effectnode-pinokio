@@ -10,7 +10,7 @@
           "PORT": "{{port}}"
         },
         "input": null,
-        "message": "npm start",
+        "message": "npm run start",
         "on": [
           {
             "event": "/http://[^\\s\\n\\r]+/",

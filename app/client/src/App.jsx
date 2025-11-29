@@ -11,10 +11,11 @@ wsProvider.on('status', event => {
   console.log(event.status) // logs "connected" or "disconnected"
 })
 
-const yNames = doc.getArray('names');
+const yTodos = doc.getArray("todos"); // <Y.Map<string | boolean>>
+
 
 function App() {
-  const names = useY(yNames)
+  const todos = useY(yTodos)
   const [message, setMessage] = useState('');
 
   useEffect(() => {
@@ -24,20 +25,29 @@ function App() {
     })
       .then((res) => res.json())
       .then((data) => setMessage(data.message));
-
-
-    names.push('happy happy')
-
-
-
-
   }, []);
 
   return (
     <div>
       <h1>Vite React with Express</h1>
+      <button onClick={() => {
+        const newTodo = 'new todo name waha ' + todos.length
+        // add a Todo
+        const todo = new Y.Map();
+        todo.set("id", crypto.randomUUID());
+        todo.set("checked", false);
+        todo.set("text", newTodo);
+        yTodos.push([todo]);
+      }}>Add one</button>
+      {todos.map((r, i) => {
+        return <div key={i + `${r.id || ''}`}>{r.text}
+          <button onClick={() => {
+            yTodos.delete(i)
+          }}>Remove</button>
+        </div>
+      })}
       <p>{message}</p>
-      <pre>{JSON.stringify(names, null, '\t')}</pre>
+      <pre>{JSON.stringify(todos, null, '\t')}</pre>
     </div>
   );
 }

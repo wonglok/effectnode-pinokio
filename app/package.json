@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently \"cd server;  npm install; npm run dev\" \"cd client; npm install; npm run dev\"",
+    "start": "concurrently \"cd server;  npm install; npm run dev\" \"npm i; npm run yjs\" \"cd client; npm install; npm run dev\"",
+    "yjs": "HOST=localhost PORT=2329 YPERSISTENCE=./database-yjs npx y-websocket",
     "dev": "npm run start"
   },
   "keywords": [],

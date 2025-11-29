@@ -1,5 +1,15 @@
 // client/src/App.jsx
 import React, { useEffect, useState } from 'react';
+import * as Y from 'yjs'
+import { WebsocketProvider } from 'y-websocket'
+
+const doc = new Y.Doc()
+const wsProvider = new WebsocketProvider('ws://localhost:1234', 'my-roomname', doc)
+
+wsProvider.on('status', event => {
+  console.log(event.status) // logs "connected" or "disconnected"
+})
+
 
 function App() {
   const [message, setMessage] = useState('');
@@ -11,6 +21,10 @@ function App() {
     })
       .then((res) => res.json())
       .then((data) => setMessage(data.message));
+
+
+    let listOfObjects = doc.getArray('listOfObjects')
+
   }, []);
 
   return (

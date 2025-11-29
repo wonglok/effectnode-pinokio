@@ -23,7 +23,8 @@
       "when": "{{input && input.event && Array.isArray(input.event) && input.event.length > 0}}",
       "method": "local.set",
       "params": {
-        "url": "{{input.event[0]}}"
+        "url2": "{{input.event[0]}}",
+        "url": "http://localhost:{{port}}"
       }
     }
   ]

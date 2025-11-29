@@ -26,7 +26,10 @@ function App() {
       .then((data) => setMessage(data.message));
 
 
-    let listOfObjects = doc.getArray('listOfObjects')
+    names.push('happy happy')
+
+
+
 
   }, []);
 
@@ -34,6 +37,7 @@ function App() {
     <div>
       <h1>Vite React with Express</h1>
       <p>{message}</p>
+      <pre>{JSON.stringify(names, null, '\t')}</pre>
     </div>
   );
 }
